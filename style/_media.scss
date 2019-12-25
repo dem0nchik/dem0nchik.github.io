@@ -1,0 +1,26 @@
+@media screen and (max-width: 992px) {
+    .header {
+        & ul {
+            flex-direction: column;
+            display: none;
+        }  
+        & h1 {
+            font-size: 20px;
+        }    
+        
+        top: -1px;  
+    }
+    .mobile-btn {
+        display: block;
+    }
+
+    .header_wrap, .hello_wrap, .education_wrap, .contact_wrap, .portfolio_wrap, .experience_wrap, .skills_wrap {
+        padding: 20px 30px !important;
+        max-width: 740px !important;
+        flex-direction: column !important;
+    }
+    .header_wrap {
+        flex-direction: row !important;
+        padding: 10px 30px !important;
+    }
+}

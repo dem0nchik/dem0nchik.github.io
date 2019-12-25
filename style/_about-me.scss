@@ -1,0 +1,42 @@
+.hello {
+    @extend %section;
+    &_wrap {
+        @extend %section_wrap;
+    }
+    padding-top: 110px !important;
+}
+
+.skills {
+    @extend %section;
+    &_wrap {
+        @extend %section_wrap;
+    }
+}
+
+.experience {
+    @extend %section;
+    &_wrap {
+        @extend %section_wrap;
+    }
+}
+.portfolio {
+    @extend %section;
+    &_wrap {
+        @extend %section_wrap;
+    }
+}
+
+.education {
+    @extend %section;
+    &_wrap {
+        @extend %section_wrap;
+    }
+}
+
+.contact {
+    @extend %section;
+    border-bottom: none !important;
+    &_wrap {
+        @extend %section_wrap;
+    }
+}

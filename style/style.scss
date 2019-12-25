@@ -1,0 +1,71 @@
+@import 'header';
+@import 'about-me';
+@import "mixins.scss";
+@import "media.scss";
+
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.icon { 
+    &::before {
+        display: inline-block;
+        font: normal normal normal 24px/1 "Material Design Icons";
+        font-size: inherit;
+        text-rendering: auto;
+        line-height: inherit;
+        color: #000;
+    }  
+    &_git::before {
+        content: "\F2A4";
+    }
+    &_link::before {
+        content: "\F33B";
+    }
+    &_teleg::before {
+        content: "\f501";
+    }
+    &_close::before {
+        content: "\F156";
+    }
+    &_menu::before {
+        content: "\F35C";
+        color: #3333ff;
+        cursor: pointer;
+    }
+}
+
+.gray-btn {
+    background: #efefef;
+    color: #252525;
+    font-size: 12px;
+    line-height: 1.66;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-family: "Lato", sans-serif;
+    transition: all 0.3s ease;
+    min-width: 170px;
+    text-align: center;
+    padding: 15px;
+    display: inline-block;
+    border: none;
+    border-radius: 2px;
+    text-decoration: none;
+    &:hover{
+        box-shadow: 10px 10px 20px rgba(37, 37, 37, 0.2);
+        color: #252525;
+    }
+}
+
+footer {
+    background: #efefef;
+    padding: 15px 0 15px;
+    text-align: center;
+    & p {
+        font-size: 14px;
+        line-height: 1.4;
+        opacity: 0.8;
+    }
+}
