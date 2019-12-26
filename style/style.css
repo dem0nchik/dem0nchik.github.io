@@ -1,5 +1,6 @@
 @charset "UTF-8";
 .header {
+  z-index: 1000;
   left: 0;
   top: 0;
   position: fixed;
@@ -50,17 +51,118 @@
 
 .active-list {
   position: relative;
-  left: 10%;
+  left: 8%;
 }
 
 .hello {
   padding-top: 110px !important;
 }
+.hello .about-me {
+  width: 50%;
+}
+.hello .about-me__title {
+  font-size: 36px;
+  line-height: 1.25;
+  font-weight: 600;
+  margin-bottom: 2px;
+}
+.hello .about-me__desc {
+  opacity: 0.8;
+  margin-bottom: 20px;
+  padding-right: 10px;
+}
+.hello .about-me__info p {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 15px;
+}
+.hello .about-me__info p .span-title {
+  font-size: 13px;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-family: "Lato", sans-serif;
+  line-height: 1.66;
+}
+.hello .about-me__info p .span-title + span {
+  display: block;
+  padding-left: 70px;
+}
+.hello .about-me__info p .span-title + span a {
+  text-decoration: none;
+  color: #000;
+  opacity: 0.9;
+}
+.hello .about-me__info p .icon-wrap a + a {
+  padding-left: 25px;
+}
+.hello .about-me .gray-btn {
+  margin-top: 10px;
+  background: #efefef;
+  color: #252525;
+  font-size: 12px;
+  line-height: 1.66;
+  text-transform: uppercase;
+  font-weight: 700;
+  font-family: "Lato", sans-serif;
+  transition: all 0.3s ease;
+  min-width: 170px;
+  text-align: center;
+  padding: 15px;
+  display: inline-block;
+  border: none;
+  border-radius: 2px;
+  text-decoration: none;
+}
+.hello .about-me .gray-btn:hover {
+  box-shadow: 10px 10px 20px rgba(37, 37, 37, 0.2);
+  color: #252525;
+}
+.hello .about-me__image {
+  position: relative;
+  padding-bottom: 330px;
+  width: 50%;
+}
+.hello .about-me__image img {
+  position: absolute;
+  -o-object-fit: cover;
+  object-fit: cover;
+  width: 100%;
+  height: 320px;
+}
+
+.skills-title {
+  width: 45%;
+}
+.skills-title h2 {
+  font-size: 30px;
+  line-height: 1.25;
+  font-weight: 600;
+  margin-bottom: 2px;
+}
+.skills-title p {
+  opacity: 0.9;
+}
+.skills-advantages__wrap + .skills-advantages__wrap {
+  border-top: 1px solid #eee;
+  padding-top: 10px;
+  margin-top: 20px;
+}
+.skills-advantages__title {
+  margin-bottom: 2px;
+  font-size: 18px;
+  line-height: 1.55;
+  font-weight: 700;
+  font-family: "Lato", sans-serif;
+}
+.skills-advantages__desc {
+  opacity: 0.9;
+}
+
 .contact {
   border-bottom: none !important;
 }
 .header, .hello, .skills, .experience, .portfolio, .education, .contact {
-  border-bottom: 1px solid gray;
+  border-bottom: 1px solid #afafaf;
   padding: 20px 0 10px 0;
 }
 
@@ -96,7 +198,27 @@
 
   .header_wrap {
     flex-direction: row !important;
-    padding: 10px 30px !important;
+    padding: 8px 30px !important;
+  }
+
+  .hello .about-me {
+    margin: -50px 0 30px 0;
+    width: 100%;
+  }
+  .hello .about-me__image {
+    width: 100%;
+    padding-bottom: 260px;
+  }
+  .hello .about-me__image img {
+    height: 250px;
+  }
+  .hello .about-me__title {
+    font-size: 28px;
+  }
+
+  .skills-title {
+    width: 100%;
+    margin-bottom: 30px;
   }
 }
 * {
@@ -123,33 +245,13 @@
 }
 .icon_close::before {
   content: "";
+  cursor: pointer;
 }
 .icon_menu::before {
   content: "";
   color: #3333ff;
   cursor: pointer;
-}
-
-.gray-btn {
-  background: #efefef;
-  color: #252525;
-  font-size: 12px;
-  line-height: 1.66;
-  text-transform: uppercase;
-  font-weight: 700;
-  font-family: "Lato", sans-serif;
-  transition: all 0.3s ease;
-  min-width: 170px;
-  text-align: center;
-  padding: 15px;
-  display: inline-block;
-  border: none;
-  border-radius: 2px;
-  text-decoration: none;
-}
-.gray-btn:hover {
-  box-shadow: 10px 10px 20px rgba(37, 37, 37, 0.2);
-  color: #252525;
+  font: normal normal normal 20px/1 "Material Design Icons";
 }
 
 footer {

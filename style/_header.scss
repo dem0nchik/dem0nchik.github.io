@@ -4,6 +4,7 @@
         @extend %section_wrap;
     }
     
+    z-index: 1000;
     left: 0;
     top: 0;
     position: fixed;
@@ -53,5 +54,5 @@
 
 .active-list {
     position: relative;
-    left: 10%;
+    left: 8%;
 }

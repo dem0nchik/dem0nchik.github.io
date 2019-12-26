@@ -21,6 +21,27 @@
     }
     .header_wrap {
         flex-direction: row !important;
-        padding: 10px 30px !important;
+        padding: 8px 30px !important;
+    }
+    .hello .about-me {
+        margin: -50px 0 30px 0;
+        width: 100%;
+        &__image {
+            width: 100%;
+            padding-bottom: 260px;
+            & img {
+                height: 250px;
+            }
+        }
+        &__title {
+            font-size: 28px;
+        }
+    }
+
+    .skills {
+        &-title {
+            width: 100%;
+            margin-bottom: 30px;
+        }
     }
 }
