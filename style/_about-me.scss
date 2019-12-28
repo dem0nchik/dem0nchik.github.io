@@ -1,3 +1,5 @@
+@import "variable";
+
 .hello {
     @extend %section;
     &_wrap {
@@ -12,6 +14,10 @@
             line-height: 1.25;
             font-weight: 600;
             margin-bottom: 2px;
+            &:after {
+                content: '.';
+                color: $basecolor;
+            }
         }
         &__desc {
             opacity: 0.8;
@@ -30,6 +36,9 @@
                     font-family: "Lato", sans-serif;
                     line-height: 1.66;
                 }
+                .span-email {                    
+                    padding-left: 76px !important;
+                }
                 .span-title + span {
                     display: block;
                     padding-left: 70px;
@@ -42,29 +51,14 @@
                 .icon-wrap a + a {
                     padding-left: 25px;
                 }
+                .icon::before {
+                    font-size: 20px !important;
+                }
             }
         }
         .gray-btn {
             margin-top: 10px;
-            background: #efefef;
-            color: #252525;
-            font-size: 12px;
-            line-height: 1.66;
-            text-transform: uppercase;
-            font-weight: 700;
-            font-family: "Lato", sans-serif;
-            transition: all 0.3s ease;
-            min-width: 170px;
-            text-align: center;
-            padding: 15px;
-            display: inline-block;
-            border: none;
-            border-radius: 2px;
-            text-decoration: none;
-            &:hover{
-                box-shadow: 10px 10px 20px rgba(37, 37, 37, 0.2);
-                color: #252525;
-            }
+            @extend %button;
         }
         &__image {
             position: relative;
@@ -88,15 +82,7 @@
     }
     &-title {
         width: 45%;
-        & h2 {
-            font-size: 30px;
-            line-height: 1.25;
-            font-weight: 600;
-            margin-bottom: 2px;
-        }
-        & p {
-            opacity: 0.9;
-        }
+        @extend %section_title;
     }
     &-advantages {
         &__wrap + &__wrap {
@@ -123,11 +109,33 @@
     &_wrap {
         @extend %section_wrap;
     }
-}
-.portfolio {
-    @extend %section;
-    &_wrap {
-        @extend %section_wrap;
+    
+    &-title {
+        width: 44%;
+        @extend %section_title;
+    }
+    &-advantages {
+        &__wrap + &__wrap {
+            border-top: 1px solid #eee;
+            padding-top: 10px;
+            margin-top: 20px;
+        }
+        &__title {
+            margin-bottom: 2px;
+            font-size: 20px;
+            line-height: 1.55;
+            font-weight: 700;
+            font-family: "Lato", sans-serif;
+            color: rgba($basecolor, 0.9);
+        }
+        &__info {
+            line-height: 1.55;
+            font-family: "Lato", sans-serif;
+            font-weight: 600;
+        }
+        &__date {
+            font-style: italic;
+        }
     }
 }
 
@@ -136,6 +144,41 @@
     &_wrap {
         @extend %section_wrap;
     }
+    &-title {
+        width: 49%;
+        @extend %section_title;
+    }
+    &-advantages {
+        &__wrap + &__wrap {
+            border-top: 1px solid #eee;
+            padding-top: 10px;
+            margin-top: 20px;
+        }
+        &__title {
+            margin-bottom: 2px;
+            font-size: 20px;
+            line-height: 1.55;
+            font-weight: 700;
+            font-family: "Lato", sans-serif;
+            color: rgba($basecolor, 0.9);
+        }
+        &__info {
+            line-height: 1.55;
+            font-family: "Lato", sans-serif;
+            font-weight: 600;
+        }
+        &__date {
+            font-style: italic;
+        }
+    }
+}
+
+.portfolio {
+    @extend %section;
+    &_wrap {
+        @extend %section_wrap;
+    }
+    @extend %section_title;
 }
 
 .contact {
@@ -143,5 +186,59 @@
     border-bottom: none !important;
     &_wrap {
         @extend %section_wrap;
+    }
+    &-title {
+        width: 46%;
+        @extend %section_title;
+    }
+    &-form {
+        display: flex;
+        &__info-wrap {
+            width: 230px;
+            margin: 0 15px;
+        }
+        &__name {
+            margin-bottom: 30px;
+        }
+        &__name, &__email {
+            padding: 5px;
+            font-size: 14px;
+            font-family: "Lato", sans-serif;
+            line-height: 1.4;
+            height: 40px;
+            width: 100%;
+            border: 1px solid #e3e3e3;
+            border-radius: 2px;
+            -webkit-transition: all 0.3s ease;
+            -o-transition: all 0.3s ease;
+            transition: all 0.3s ease;
+            &:hover {
+                border: 1px solid $basecolor;
+            }
+        }
+        
+        &__message-wrap {
+            width: 380px;
+            margin: 0 15px;
+        }
+        & textarea {
+            height: 122px;
+            width: 100%;
+            border: 1px solid #e3e3e3;
+            padding: 5px 10px;
+            -webkit-transition: all 0.3s ease;
+            -o-transition: all 0.3s ease;
+            transition: all 0.3s ease;
+            resize: none;
+            display: block;
+            border-radius: 2px;
+            &:hover {
+                border: 1px solid $basecolor;
+            }
+        }
+        &__btn {
+            margin: 20px 0 0 232px;
+            @extend %button;
+        }
     }
 }

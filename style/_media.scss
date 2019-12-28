@@ -37,8 +37,38 @@
             font-size: 28px;
         }
     }
+    .icon-wrap {
+        margin-top: -5px;
+    }
+    .icon::before {
+        font-size: 24px !important;
+    }
+    .contact {
+        &-form {
+            display: flex;
+            flex-direction: column;
+            &__info-wrap {
+                width: 100%;
+                margin: 0;
+            }
+            &__name, &__email {
+                margin-bottom: 15px;
+            }
+            &__message-wrap {
+                width: 100%;
+                margin: 0;
+            }                
+            & textarea {
+                padding: 5px;
+            }
+            
+            &__btn {
+                margin: 20px 0 0 0;
+            }
+        }
+    }
 
-    .skills {
+    .skills, .experience, .education, .contact {
         &-title {
             width: 100%;
             margin-bottom: 30px;

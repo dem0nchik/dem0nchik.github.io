@@ -9,13 +9,14 @@ window.addEventListener('scroll', () => {
 
 let mob_btn = document.querySelector('.mobile-btn');
 let close_menu = document.querySelector('.close-menu');
-let list_menu = document.querySelector('.header_wrap > ul');
-let listMenuItem = document.querySelectorAll('.header_wrap > ul > li');
+let overlay = document.querySelector('.overlay');
+let list_menu = document.querySelector('.overlay > ul');
+let listMenuItem = document.querySelectorAll('.overlay > ul > li');
 mob_btn.onclick = () => {
     close_menu.style.display = "block";
     mob_btn.style.display = "none";
     list_menu.style.display = "block";
-    list_menu.classList.add('active-list');
+    overlay.style.display = "flex";
 
     listMenuItem.forEach((el, i) => el.onclick = () => hide())
     
@@ -24,16 +25,17 @@ mob_btn.onclick = () => {
     }
 };
 let hide = () => {
-    close_menu.style.display = "none";
     mob_btn.style.display = "block";
-    list_menu.style.display = "none";
-    list_menu.classList.remove('active-list');
+    overlay.style.display = "none";
+    close_menu.style.display = "none";
 }
 
+let menu;
 $(".header_wrap > ul > li > a").on("click", function(e){
     e.preventDefault();
+    menu = window.innerWidth > 992 ? 76 : 50;
     var anchor = $(this).attr('href');
     $('html, body').stop().animate({
-        scrollTop: $(anchor).offset().top - 70
+        scrollTop: $(anchor).offset().top - menu
     }, 500);
 });

@@ -12,6 +12,10 @@
   font-size: 24px;
   font-weight: 700;
 }
+.header h1:after {
+  content: ".";
+  color: #3333ff;
+}
 .header ul {
   display: flex;
   align-items: center;
@@ -32,7 +36,7 @@
   color: black;
 }
 .header ul li a:hover {
-  color: #337ab7;
+  color: #3333ff;
   text-decoration: underline;
 }
 
@@ -41,19 +45,18 @@
   -webkit-box-shadow: 0 5px 10px rgba(37, 37, 37, 0.1);
 }
 
-.close-menu {
+.close-menu, .mobile-btn {
   display: none;
 }
 
-.mobile-btn {
+.overlay {
   display: none;
 }
 
-.active-list {
-  position: relative;
-  left: 8%;
-}
-
+/*.active-list {
+    position: relative;
+    left: 8%;
+}*/
 .hello {
   padding-top: 110px !important;
 }
@@ -65,6 +68,10 @@
   line-height: 1.25;
   font-weight: 600;
   margin-bottom: 2px;
+}
+.hello .about-me__title:after {
+  content: ".";
+  color: #3333ff;
 }
 .hello .about-me__desc {
   opacity: 0.8;
@@ -83,6 +90,9 @@
   font-family: "Lato", sans-serif;
   line-height: 1.66;
 }
+.hello .about-me__info p .span-email {
+  padding-left: 76px !important;
+}
 .hello .about-me__info p .span-title + span {
   display: block;
   padding-left: 70px;
@@ -95,27 +105,11 @@
 .hello .about-me__info p .icon-wrap a + a {
   padding-left: 25px;
 }
+.hello .about-me__info p .icon::before {
+  font-size: 20px !important;
+}
 .hello .about-me .gray-btn {
   margin-top: 10px;
-  background: #efefef;
-  color: #252525;
-  font-size: 12px;
-  line-height: 1.66;
-  text-transform: uppercase;
-  font-weight: 700;
-  font-family: "Lato", sans-serif;
-  transition: all 0.3s ease;
-  min-width: 170px;
-  text-align: center;
-  padding: 15px;
-  display: inline-block;
-  border: none;
-  border-radius: 2px;
-  text-decoration: none;
-}
-.hello .about-me .gray-btn:hover {
-  box-shadow: 10px 10px 20px rgba(37, 37, 37, 0.2);
-  color: #252525;
 }
 .hello .about-me__image {
   position: relative;
@@ -133,15 +127,6 @@
 .skills-title {
   width: 45%;
 }
-.skills-title h2 {
-  font-size: 30px;
-  line-height: 1.25;
-  font-weight: 600;
-  margin-bottom: 2px;
-}
-.skills-title p {
-  opacity: 0.9;
-}
 .skills-advantages__wrap + .skills-advantages__wrap {
   border-top: 1px solid #eee;
   padding-top: 10px;
@@ -158,20 +143,160 @@
   opacity: 0.9;
 }
 
+.experience-title {
+  width: 44%;
+}
+.experience-advantages__wrap + .experience-advantages__wrap {
+  border-top: 1px solid #eee;
+  padding-top: 10px;
+  margin-top: 20px;
+}
+.experience-advantages__title {
+  margin-bottom: 2px;
+  font-size: 20px;
+  line-height: 1.55;
+  font-weight: 700;
+  font-family: "Lato", sans-serif;
+  color: rgba(51, 51, 255, 0.9);
+}
+.experience-advantages__info {
+  line-height: 1.55;
+  font-family: "Lato", sans-serif;
+  font-weight: 600;
+}
+.experience-advantages__date {
+  font-style: italic;
+}
+
+.education-title {
+  width: 49%;
+}
+.education-advantages__wrap + .education-advantages__wrap {
+  border-top: 1px solid #eee;
+  padding-top: 10px;
+  margin-top: 20px;
+}
+.education-advantages__title {
+  margin-bottom: 2px;
+  font-size: 20px;
+  line-height: 1.55;
+  font-weight: 700;
+  font-family: "Lato", sans-serif;
+  color: rgba(51, 51, 255, 0.9);
+}
+.education-advantages__info {
+  line-height: 1.55;
+  font-family: "Lato", sans-serif;
+  font-weight: 600;
+}
+.education-advantages__date {
+  font-style: italic;
+}
+
 .contact {
   border-bottom: none !important;
 }
-.header, .hello, .skills, .experience, .portfolio, .education, .contact {
+.contact-title {
+  width: 46%;
+}
+.contact-form {
+  display: flex;
+}
+.contact-form__info-wrap {
+  width: 230px;
+  margin: 0 15px;
+}
+.contact-form__name {
+  margin-bottom: 30px;
+}
+.contact-form__name, .contact-form__email {
+  padding: 5px;
+  font-size: 14px;
+  font-family: "Lato", sans-serif;
+  line-height: 1.4;
+  height: 40px;
+  width: 100%;
+  border: 1px solid #e3e3e3;
+  border-radius: 2px;
+  -webkit-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+.contact-form__name:hover, .contact-form__email:hover {
+  border: 1px solid #3333ff;
+}
+.contact-form__message-wrap {
+  width: 380px;
+  margin: 0 15px;
+}
+.contact-form textarea {
+  height: 122px;
+  width: 100%;
+  border: 1px solid #e3e3e3;
+  padding: 5px 10px;
+  -webkit-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  resize: none;
+  display: block;
+  border-radius: 2px;
+}
+.contact-form textarea:hover {
+  border: 1px solid #3333ff;
+}
+.contact-form__btn {
+  margin: 20px 0 0 232px;
+}
+
+.header, .hello, .skills, .experience, .education, .portfolio, .contact {
   border-bottom: 1px solid #afafaf;
   padding: 20px 0 10px 0;
 }
 
-.header_wrap, .hello_wrap, .skills_wrap, .experience_wrap, .portfolio_wrap, .education_wrap, .contact_wrap {
+.header_wrap, .hello_wrap, .skills_wrap, .experience_wrap, .education_wrap, .portfolio_wrap, .contact_wrap {
   padding: 15px;
   max-width: 1100px;
   display: flex;
   justify-content: space-between;
   margin: 0 auto;
+}
+
+.skills-title h2, .experience-title h2, .education-title h2, .portfolio h2, .contact-title h2 {
+  font-size: 30px;
+  line-height: 1.25;
+  font-weight: 600;
+  margin-bottom: 2px;
+}
+.skills-title h2:after, .experience-title h2:after, .education-title h2:after, .portfolio h2:after, .contact-title h2:after {
+  content: ".";
+  color: #3333ff;
+}
+.skills-title p, .experience-title p, .education-title p, .portfolio p, .contact-title p {
+  opacity: 0.9;
+  max-width: 95%;
+}
+
+.hello .about-me .gray-btn, .contact-form__btn {
+  cursor: pointer;
+  background: #3333ff;
+  color: #fff;
+  font-size: 12px;
+  line-height: 1.66;
+  text-transform: uppercase;
+  font-weight: 700;
+  font-family: "Lato", sans-serif;
+  transition: all 0.3s ease;
+  min-width: 170px;
+  text-align: center;
+  padding: 15px;
+  display: inline-block;
+  border: none;
+  border-radius: 2px;
+  text-decoration: none;
+}
+.hello .about-me .gray-btn:hover, .contact-form__btn:hover {
+  box-shadow: 10px 10px 20px rgba(37, 37, 37, 0.2);
+  color: #eee;
 }
 
 @media screen and (max-width: 992px) {
@@ -216,7 +341,37 @@
     font-size: 28px;
   }
 
-  .skills-title {
+  .icon-wrap {
+    margin-top: -5px;
+  }
+
+  .icon::before {
+    font-size: 24px !important;
+  }
+
+  .contact-form {
+    display: flex;
+    flex-direction: column;
+  }
+  .contact-form__info-wrap {
+    width: 100%;
+    margin: 0;
+  }
+  .contact-form__name, .contact-form__email {
+    margin-bottom: 15px;
+  }
+  .contact-form__message-wrap {
+    width: 100%;
+    margin: 0;
+  }
+  .contact-form textarea {
+    padding: 5px;
+  }
+  .contact-form__btn {
+    margin: 20px 0 0 0;
+  }
+
+  .skills-title, .experience-title, .education-title, .contact-title {
     width: 100%;
     margin-bottom: 30px;
   }
@@ -224,6 +379,56 @@
 * {
   margin: 0;
   padding: 0;
+}
+
+.overlay {
+  background: #3333ff;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  text-align: center;
+  z-index: 1003;
+  -webkit-transition: -webkit-transform 0.3s ease;
+  transition: -webkit-transform 0.3s ease;
+  -o-transition: transform 0.3s ease;
+  transition: transform 0.3s ease;
+  transition: transform 0.3s ease, -webkit-transform 0.3s ease;
+  padding: 0 20px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.overlay .close-menu {
+  position: absolute;
+  top: 30px;
+  left: 80%;
+}
+.overlay ul li {
+  list-style: none;
+  text-transform: uppercase;
+  padding-left: 5px;
+  padding-right: 5px;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1.66;
+  margin: 15px 0 20px 20px;
+}
+.overlay ul li a {
+  transition: all 0.4s ease;
+  text-decoration: none;
+  color: #fff;
+}
+.overlay ul li a:hover {
+  color: #bbaaff;
+  text-decoration: underline;
+}
+
+.overlay {
+  display: none;
 }
 
 .icon::before {
@@ -246,6 +451,7 @@
 .icon_close::before {
   content: "";
   cursor: pointer;
+  color: #efefef;
 }
 .icon_menu::before {
   content: "";

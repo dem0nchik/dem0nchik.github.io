@@ -9,3 +9,43 @@
     justify-content: space-between;
     margin: 0 auto;
 }
+%section_title {
+    & h2 {
+        font-size: 30px;
+        line-height: 1.25;
+        font-weight: 600;
+        margin-bottom: 2px;
+        &:after {
+            content: '.';
+            color: $basecolor;
+        }
+    }
+    & p {
+        opacity: 0.9;
+        max-width: 95%;
+    }
+}
+
+
+%button {
+    cursor: pointer;
+    background: $basecolor;
+    color: #fff;
+    font-size: 12px;
+    line-height: 1.66;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-family: "Lato", sans-serif;
+    transition: all 0.3s ease;
+    min-width: 170px;
+    text-align: center;
+    padding: 15px;
+    display: inline-block;
+    border: none;
+    border-radius: 2px;
+    text-decoration: none;
+    &:hover{
+        box-shadow: 10px 10px 20px rgba(37, 37, 37, 0.2);
+        color: #eee;
+    }
+}

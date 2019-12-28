@@ -1,3 +1,5 @@
+@import "variable";
+
 .header {
     @extend %section;
     &_wrap {
@@ -15,6 +17,10 @@
     & h1 {
         font-size: 24px;
         font-weight: 700;
+        &:after {
+            content: '.';
+            color: $basecolor;
+        }
     }
     & ul {
         & li {
@@ -31,7 +37,7 @@
                 text-decoration: none;
                 color: black;
                 &:hover {
-                    color: #337ab7;
+                    color: $basecolor;
                     text-decoration: underline;
                 }
             }
@@ -45,14 +51,14 @@
     border: none !important;
     -webkit-box-shadow: 0 5px 10px rgba(37, 37, 37, 0.1);
 }
-.close-menu {
+.close-menu, .mobile-btn {
     display: none;
 }
-.mobile-btn {
+.overlay {
     display: none;
 }
 
-.active-list {
+/*.active-list {
     position: relative;
     left: 8%;
-}
+}*/
