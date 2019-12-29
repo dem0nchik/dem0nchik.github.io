@@ -87,5 +87,9 @@
         &-box {     
             width: 100%;
         }
+        &-box + &-box {
+            border-top: 1px solid #eee;
+            padding-top: 30px;
+        }
     }
 }

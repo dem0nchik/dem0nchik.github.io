@@ -212,13 +212,14 @@
   margin-bottom: 10px;
   overflow: hidden;
   border-radius: 2px;
+  margin-top: 10px;
   margin-left: -15px;
 }
 .portfolio-box {
   text-decoration: none;
   width: 25%;
   min-height: 250px;
-  margin-bottom: 90px;
+  margin-bottom: 100px;
 }
 .portfolio-box:hover .portfolio-img img {
   transform: scale(1.1);
@@ -451,6 +452,10 @@
 @media screen and (max-width: 540px) {
   .portfolio-box {
     width: 100%;
+  }
+  .portfolio-box + .portfolio-box {
+    border-top: 1px solid #eee;
+    padding-top: 30px;
   }
 }
 * {
