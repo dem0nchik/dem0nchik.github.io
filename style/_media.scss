@@ -43,6 +43,11 @@
     .icon::before {
         font-size: 24px !important;
     }
+    .portfolio {
+        &-box {     
+            width: 50%;
+        }
+    }
     .contact {
         &-form {
             display: flex;
@@ -72,6 +77,15 @@
         &-title {
             width: 100%;
             margin-bottom: 30px;
+        }
+    }
+}
+
+
+@media screen and (max-width: 540px) {
+    .portfolio {
+        &-box {     
+            width: 100%;
         }
     }
 }

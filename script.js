@@ -26,16 +26,26 @@ mob_btn.onclick = () => {
 };
 let hide = () => {
     mob_btn.style.display = "block";
-    overlay.style.display = "none";
     close_menu.style.display = "none";
+    $('.overlay').click(function() {
+        $(this).slideUp({
+          duration: 'fast',
+          easing: 'linear'
+        });
+      });
 }
 
 let menu;
-$(".header_wrap > ul > li > a").on("click", function(e){
-    e.preventDefault();
-    menu = window.innerWidth > 992 ? 76 : 50;
-    var anchor = $(this).attr('href');
-    $('html, body').stop().animate({
-        scrollTop: $(anchor).offset().top - menu
-    }, 500);
-});
+const animMenu = (list) => {
+    $(`${list} > ul > li > a`).on("click", function(e){
+        e.preventDefault();
+        menu = window.innerWidth > 992 ? 76 : 50;
+        var anchor = $(this).attr('href');
+        $('html, body').stop().animate({
+            scrollTop: $(anchor).offset().top - menu
+        }, 500);
+    });
+}
+
+animMenu('.header_wrap');
+animMenu('.overlay');
